@@ -4,7 +4,7 @@ let dayOfWeeks = date.getDay();
 const daysOfWeeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let dayName = daysOfWeeks[dayOfWeeks];
 
-return dayName
+return dayName;
 }
 
 export default daysOfWeek;

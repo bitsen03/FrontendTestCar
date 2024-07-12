@@ -6,6 +6,9 @@ html {
   margin: 0;
   padding: 0;
 }
+::-webkit-scrollbar {
+  width: 0;
+}
 html,
 body{
   height: 100%;
@@ -50,15 +53,58 @@ body {
   align-items: center; 
   width: 60px;
 }
-.selected-day {
-  background-color: rgba(73, 68, 76, 0.151);
+.selectedDay {
+  border: 2px solid rgb(156, 137, 184);
   border-radius: 50%;
 }
 .day-card {
-  padding: 2px;
-  width: 30px;
-  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
 }
 .day-of-week {
   margin-bottom: 20px; /* Уменьшение отступа для лучшего выравнивания */
 }
+.isDayOff {
+  background-color: rgb(206, 237, 199);
+  border-radius: 50%;
+}
+.selectDate {
+  display: flex;
+  justify-content: space-evenly;
+}
+.selectDateBtn {
+  margin-top: 20px;
+  width: 150px;
+  padding: 7px;
+  background-color: rgb(156, 137, 184);
+  border: 2px solid rgb(160, 136, 196);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.unActive {
+  display: none;
+}
+.modal_content {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  height: 200px;
+  width: 400px;
+}
+
+

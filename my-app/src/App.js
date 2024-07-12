@@ -1,5 +1,5 @@
 import './index.css';
-import GridDate from './components/GridDate.tsx';
+import GridDate from './components/Main.tsx';
 
 function App() {
   return (

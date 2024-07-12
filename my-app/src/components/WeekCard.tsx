@@ -1,4 +1,3 @@
-import daysOfWeek from "../help/daysOfWeek.ts";
 import DayCard from "./DayCard.tsx";
 import React from "react";
 
@@ -8,10 +7,10 @@ interface WeekCardProps {
 }
 
 const WeekCard: React.FC<WeekCardProps> = ({children, keys}) => {
-    const className = `week-card ${keys}`
+    const cn = `week-card ${keys}`
     return (
-        <div className={className}>
-            {children.map((child, i) =><DayCard key={i} >{child}</DayCard>)}
+        <div className={cn}>
+            {children.map((date, i) =><DayCard key={i}>{date}</DayCard>)}
         </div>
     );
 }
