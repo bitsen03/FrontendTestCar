@@ -1,4 +1,4 @@
-import ModalContext from "../help/ModalContext";
+import ModalContext from "../help/ModalContext.ts";
 import React, {useState} from "react";
 
 const ModalProvider = ({ children }) => {  

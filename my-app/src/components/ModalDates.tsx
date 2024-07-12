@@ -1,19 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import classNames from "classnames";
+import ModalContext from "../help/ModalContext.ts";
 
-interface ModalDateProps {
-    active: boolean,
-    setActive: (active: boolean) => void;
-}
+const ModalDate:React.FC<ModalDateProps> = () => { 
 
-const ModalDate:React.FC<ModalDateProps> = ({active, setActive}) => { 
+const {modalActive, setModalActive} = useContext(ModalContext)
 
 const cn = classNames('modal', {
-    unActive: !active,
+    unActive: !modalActive,
 })
 
 return (
-    <div className={cn} onClick={()=>setActive(false)}>
+    <div className={cn} onClick={()=>setModalActive(false)}>
         <div className="modal_content" onClick={e => e.stopPropagation()}>
         </div>
     </div>

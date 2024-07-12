@@ -25,6 +25,7 @@ return (
     <div className="container">
         <ModalProvider>
             <main>
+            <SelectDate></SelectDate>
             <div className="all-day">
             {monthWithPredDays.map(([keys, value], indx) => 
                 <div className="column-week" key={indx}>
@@ -33,7 +34,6 @@ return (
                 </div>
             )}
             </div>
-        <SelectDate></SelectDate>
         <ModalDate active={modalActive} setActive={setModalActive} />
         </main>
         </ModalProvider>
