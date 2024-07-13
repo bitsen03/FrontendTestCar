@@ -2,7 +2,7 @@ import React from "react";
 import SelectDateBtn from "./SelectDateBtn.tsx";
 import { selectCurrentDate } from '../redux/currentDateSlice';
 import { useSelector } from 'react-redux';
-import { nameMonth } from "../help/nameMonth.ts";
+import { nameMonth } from "../help/getDates.ts";
 
 const SelectDate: React.FC = () => {
     const arrYear:number[] = []

@@ -27,7 +27,7 @@ const currentDateSlice = createSlice({
             state.month = payload.month;
         },
         addDay: (state, {payload}) => {
-            state.day = payload.day;
+            state.day = payload;
         }
     }
 })

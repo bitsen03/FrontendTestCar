@@ -1,19 +1,16 @@
 import React, { useState, createContext} from "react"
 import { useSelector } from 'react-redux';
-import daysInMonth from "../help/daysInMonth.ts";
 import WeekCard from "./WeekCard.tsx";
 import { selectCurrentDate } from "../redux/currentDateSlice.js";
 import SelectDate from "./SelectDate.tsx";
-import { getAllWeek, getPredDaysMonth, getNextDaysMonth } from "../help/nameMonth.ts";
-import ModalDate from "./ModalDates.tsx";
+import { getAllWeek, getPredDaysMonth, daysInMonth,  } from "../help/getDates.ts";
+import ModalDate from "./modal/ModalDates.tsx";
 import ModalProvider from "./ModalProvider.tsx";
 
 export default function GridDate () {
 const [modalActive, setModalActive] = useState(false);
 
 let {year, month, day} = useSelector(selectCurrentDate)
-const monthForFetch = month.toString().padStart(2, '0');
-const dayForFetch = day.toString().padStart(2, '0');
 let countDayInMonth = daysInMonth(year, month);
 
 const allWeek = getAllWeek(year, month, countDayInMonth)

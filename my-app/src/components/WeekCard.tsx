@@ -1,17 +1,21 @@
-import DayCard from "./DayCard.tsx";
 import React from "react";
+import DayCard from "./DayCard.tsx";
 
 interface WeekCardProps {
     children: number[];
-    keys: string,
+    keys: string;
 }
 
-const WeekCard: React.FC<WeekCardProps> = ({children, keys}) => {
-    const cn = `week-card ${keys}`
+const WeekCard: React.FC<WeekCardProps> = ({ children, keys }) => {
+    const cn = `week-card ${keys}`;
+    
     return (
         <div className={cn}>
-            {children.map((date, i) =><DayCard key={i}>{date}</DayCard>)}
+            {children.map((date, index) => (
+                <DayCard key={index}>{date}</DayCard>
+            ))}
         </div>
     );
 }
+
 export default WeekCard;

@@ -2,7 +2,7 @@ import React from "react";
 import { addYear, addMonth } from "../redux/currentDateSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { nameMonthToIndex } from "../help/nameMonth.ts";
+import { nameMonthToIndex } from "../help/getDates.ts";
 
 interface SelectDateBtnProps {
     children: string;

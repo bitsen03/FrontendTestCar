@@ -103,8 +103,115 @@ body {
   padding: 20px;
   border-radius: 20px;
   background-color: white;
-  height: 200px;
-  width: 400px;
+
 }
 
+input[type="radio"] {
+  display: none;
+}
+/* input[type='submit'] {
+  appearance: none; 
+  background-color: transparent; 
+  padding: 0; 
+  cursor: pointer; 
+} */
 
+/* Стилизация радио обёртки */
+.radio-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.radio-wrapper .custom-radio {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: var(--radio-border-color);
+  box-sizing: border-box;
+  transition: border 2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.custom-radio:hover {
+  transform: scale(1.1);
+}
+
+/* Стилизация выбранного состояния */
+.radio-wrapper.checked .custom-radio {
+  border: 2px solid rgb(73, 68, 76);
+}
+.btn-modal {
+  border: none;
+  background-color: rgb(156, 137, 184);
+  color: white;
+  border-radius: 8px;
+  padding: 5px 21px;
+  margin: 0 30%
+}
+.div-input {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 5px;
+}
+.input-modal {
+  border: rgb(156, 137, 184) 2px solid;
+  border-radius: 8px;
+  padding: 7px 8px;
+  outline: none; /* Убираем обводку */
+}
+.form-CreateTask {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.task {
+  color: white;
+  background-color: var(--selectedColor);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  max-width: 100%; 
+  flex: 1;
+}
+.task-title {
+  margin-bottom: 10px;
+}
+.currentDate-modal {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.name-task-modal {
+  word-break: break-all;
+} 
+.all-task {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.task-and-delete {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  background-color:var(--selectedColor);
+  border-radius: 50%;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  font-weight: 400;
+  font-size: 24px;
+}
+.delete-btn:hover {
+  transform: scale(1.1);
+}
+.colors-radio {
+  display: flex;
+  justify-content: center;
+}

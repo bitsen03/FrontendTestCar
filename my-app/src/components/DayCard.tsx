@@ -1,9 +1,10 @@
 import React from 'react';
 import { useEffect, useState, useContext } from 'react';
 import { selectCurrentDate } from '../redux/currentDateSlice';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames'
 import ModalContext from '../help/ModalContext.ts';
+import { addDay } from '../redux/currentDateSlice';
 
 interface DayCardProps {
     children: {year:number, month:number, value:number };
@@ -11,11 +12,19 @@ interface DayCardProps {
 
 const DayCard: React.FC<DayCardProps> = ({children}) => {
     const [isDayOff, setIsDayOff] = useState(false);
+    const dispatch = useDispatch();
+
     let {day} = useSelector(selectCurrentDate)
     let {year, month, value} = children;
     const {setModalActive} = useContext(ModalContext);
+
     const monthForFetch = month.toString().padStart(2, '0');
     const dayForFetch = value.toString().padStart(2, '0');
+
+    const handleDayCard = () => {
+        dispatch(addDay(value))
+        setModalActive(true)
+    } 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,7 +45,7 @@ const DayCard: React.FC<DayCardProps> = ({children}) => {
     });
     
     return (
-        <div className={cn} onClick={() => setModalActive(true)}>
+        <div className={cn} onClick={handleDayCard}>
             <p>{value}</p>
         </div>
     );
