@@ -1,4 +1,4 @@
-import React, { useState, createContext} from "react"
+import React from "react"
 import { useSelector } from 'react-redux';
 import WeekCard from "./WeekCard.tsx";
 import { selectCurrentDate } from "../redux/currentDateSlice.js";
@@ -8,9 +8,7 @@ import ModalDate from "./modal/ModalDates.tsx";
 import ModalProvider from "./ModalProvider.tsx";
 
 export default function GridDate () {
-const [modalActive, setModalActive] = useState(false);
-
-let {year, month, day} = useSelector(selectCurrentDate)
+let {year, month} = useSelector(selectCurrentDate)
 let countDayInMonth = daysInMonth(year, month);
 
 const allWeek = getAllWeek(year, month, countDayInMonth)
@@ -31,7 +29,7 @@ return (
                 </div>
             )}
             </div>
-        <ModalDate active={modalActive} setActive={setModalActive} />
+        <ModalDate />
         </main>
         </ModalProvider>
 

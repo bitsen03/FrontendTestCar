@@ -38,6 +38,7 @@ body {
   border-radius: 8px;
   padding: 8px;
   margin-top: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
 }
 .week-card {
   display: flex;
@@ -53,10 +54,7 @@ body {
   align-items: center; 
   width: 60px;
 }
-.selectedDay {
-  border: 2px solid rgb(156, 137, 184);
-  border-radius: 50%;
-}
+
 .day-card {
   display: flex;
   justify-content: center;
@@ -83,6 +81,7 @@ body {
   border: 2px solid rgb(160, 136, 196);
   color: rgb(255, 255, 255);
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
 }
 
 .modal {
@@ -176,6 +175,7 @@ input[type="radio"] {
   flex-wrap: wrap;
   max-width: 100%; 
   flex: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
 }
 .task-title {
   margin-bottom: 10px;
@@ -207,6 +207,7 @@ input[type="radio"] {
   transition: transform 0.2s ease-in-out;
   font-weight: 400;
   font-size: 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
 }
 .delete-btn:hover {
   transform: scale(1.1);
@@ -214,4 +215,9 @@ input[type="radio"] {
 .colors-radio {
   display: flex;
   justify-content: center;
+}
+.haVeTask {
+  color: white;
+  background-color: rgb(156, 137, 184);
+  border-radius: 50%;
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import { removeTask } from "../../redux/taskSlice";
 import { useDispatch, useSelector} from 'react-redux';
-import { selectTasks } from "../../redux/taskSlice";
 
 interface ModalContentProps {
     children: {
@@ -14,7 +13,6 @@ interface ModalContentProps {
 }
 
 const ModalContent: React.FC<ModalContentProps> = ({ children, id, index}) => {
-    console.log(useSelector(selectTasks))
     const { name, time, selectedColor } = children;
     const dispatch = useDispatch()
     const handleDeleteBtn = () => {

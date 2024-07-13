@@ -7,7 +7,7 @@ import { nameMonth } from "../help/getDates.ts";
 const SelectDate: React.FC = () => {
     const arrYear:number[] = []
     let {year, month} = useSelector(selectCurrentDate)
-    console.log(useSelector(selectCurrentDate))
+    
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     for (let i = 2000; i <= 2026; i++) {
         arrYear.push(i);

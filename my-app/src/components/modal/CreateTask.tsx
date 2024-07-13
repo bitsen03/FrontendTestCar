@@ -31,7 +31,6 @@ const CreateTask: React.FC = () => {
   const handleDispatch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(addTask( {id: id, value:{ selectedColor, name, time, id }}));
-    // Сбросить состояния после отправки
     setSelectedColor(colors[0]);
     setName('');
     setTime('');

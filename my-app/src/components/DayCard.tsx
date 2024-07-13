@@ -1,23 +1,27 @@
 import React from 'react';
 import { useEffect, useState, useContext } from 'react';
 import { selectCurrentDate } from '../redux/currentDateSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import classNames from 'classnames'
 import ModalContext from '../help/ModalContext.ts';
 import { addDay } from '../redux/currentDateSlice';
+import {monthString, dayString} from "../help/getDates.ts";
+import { selectTasksId } from '../redux/taskSlice.js'; 
+import { useSelector } from 'react-redux';
 
 interface DayCardProps {
-    children: {year:number, month:number, value:number };
+    children: {year:number, month:number, value:number, daysInMonth:number};
 }
 
 const DayCard: React.FC<DayCardProps> = ({children}) => {
     const [isDayOff, setIsDayOff] = useState(false);
     const dispatch = useDispatch();
 
-    let {day} = useSelector(selectCurrentDate)
     let {year, month, value} = children;
     const {setModalActive} = useContext(ModalContext);
-
+    const id = `${year}/${monthString(month)}/${dayString(value)}`
+    const tasks = useSelector(state => selectTasksId(state, id))
+    console.log(tasks)
     const monthForFetch = month.toString().padStart(2, '0');
     const dayForFetch = value.toString().padStart(2, '0');
 
@@ -41,7 +45,7 @@ const DayCard: React.FC<DayCardProps> = ({children}) => {
 
     const cn = classNames('day-card', {
         isDayOff,
-        selectedDay: value === day,
+        haVeTask: tasks !== undefined && tasks.length !== 0
     });
     
     return (
