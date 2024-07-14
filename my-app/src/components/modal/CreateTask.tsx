@@ -30,12 +30,11 @@ const CreateTask: React.FC = () => {
   };
   const handleDispatch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addTask( {id: id, value:{ selectedColor, name, time, id }}));
+    dispatch(addTask( {id: id, value:{ selectedColor, name, time, completeTask:false}}));
     setSelectedColor(colors[0]);
     setName('');
     setTime('');
   };
-
   return (
     <>
     <div className="currentDate-modal">
