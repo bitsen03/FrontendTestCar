@@ -21,7 +21,6 @@ const DayCard: React.FC<DayCardProps> = ({children}) => {
     const {setModalActive} = useContext(ModalContext);
     const id = `${year}/${monthString(month)}/${dayString(value)}`
     const tasks = useSelector(state => selectTasksId(state, id))
-    console.log(tasks)
     const monthForFetch = month.toString().padStart(2, '0');
     const dayForFetch = value.toString().padStart(2, '0');
 
