@@ -29,5 +29,6 @@ const taskSlice = createSlice({
 
 export const selectTasks = state => state.task;
 export const selectTasksId = (state, id) => state.task.task[id];
+export const selectCompletTasksId = (state, id, index) => state.task.task[id][index].completeTask
 export const {addTask, removeTask, setCompletTask} = taskSlice.actions;
 export default taskSlice.reducer;
