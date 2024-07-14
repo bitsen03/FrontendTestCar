@@ -66,7 +66,8 @@ body {
   margin-bottom: 20px; /* Уменьшение отступа для лучшего выравнивания */
 }
 .isDayOff {
-  background-color: rgb(206, 237, 199);
+  color: black !important;
+  background-color: rgb(206, 237, 199) !important;
   border-radius: 50%;
 }
 .selectDate {
@@ -219,5 +220,6 @@ input[type="radio"] {
 .haVeTask {
   color: white;
   background-color: rgb(156, 137, 184);
+  border: 2px rgb(156, 137, 184) solid;
   border-radius: 50%;
 }
